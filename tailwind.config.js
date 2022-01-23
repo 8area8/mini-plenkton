@@ -1,7 +1,7 @@
 module.exports = {
   mode: "jit",
   content: [
-    // "./components/**/*.{vue,js}",
+    "./components/**/*.{vue,js}",
     // "./layouts/**/*.vue",
     // "./pages/**/*.vue",
     // "./plugins/**/*.{js,ts}",
@@ -10,6 +10,11 @@ module.exports = {
   ],
   theme: {
     extend: {},
+    fontFamily: {
+      'sans': ['Roboto'],
+      'sansTitle': ['RobotoCondensed'],
+      'sansThin': ['RobotoThin'],
+    }
   },
   variants: {
     extend: {},
