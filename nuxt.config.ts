@@ -12,5 +12,11 @@ export default defineNuxtConfig({
         },
       }
     },
+  },
+  app: {
+    buildAssetsDir: '/_nuxt/'
+  },
+  vite: {
+    base: '/_nuxt/'
   }
 })
