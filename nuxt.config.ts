@@ -11,7 +11,7 @@ export default defineNuxtConfig({
           autoprefixer: {},
         },
       }
-    },
+    }
   },
   app: {
     buildAssetsDir: '/_nuxt/'
