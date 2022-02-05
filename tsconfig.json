@@ -7,6 +7,10 @@
     "files": true,
   },
   "compilerOptions": {
-    "types": ["jest"]
+    "types": ["jest"],
+    // fix ts error: https://github.com/microsoft/playwright/issues/7121#issuecomment-878795543
+    "paths": {
+      "src/*" : ["src/*"]
+    }
   }
 }
