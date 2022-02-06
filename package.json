@@ -24,8 +24,9 @@
   "dependencies": {
     "@babel/preset-typescript": "^7.16.7",
     "app-module-path": "^2.2.0",
-    "front-matter": "^4.0.2",
+    "gray-matter": "^4.0.3",
     "marked": "^4.0.10",
+    "path": "^0.12.7",
     "ts-node": "^10.4.0"
   }
 }

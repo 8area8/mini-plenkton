@@ -1,7 +1,10 @@
 <template>
-  <div>
-    <Navbar />
-  </div>
+  <NuxtLayout>
+    <div>
+      <Navbar />
+      <NuxtPage />
+    </div>
+  </NuxtLayout>
 </template>
 
 <script lang="ts" setup>
