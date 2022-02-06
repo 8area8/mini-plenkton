@@ -1,13 +1,48 @@
 name: Nuxt tests
-on: push
+on: [pull_request]
 jobs:
-  build:
+  jest:
+    name: Run Jest tests
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
+
     - name: Install modules
       run: npm ci
+
     - name: Build Nuxt
       run: npm run build
-    - name: Run tests
+
+    - name: Run Jest tests
       run: npm run test
+
+  e2e:
+    name: Run Playwright tests
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - uses: actions/setup-node@v2
+      with:
+        node-version: '14.x'
+
+    - name: Install dependencies
+      run: npm ci
+
+    - name: Install Playwright
+      run: npx playwright install --with-deps
+
+    - name: Build Nuxt
+      run: npm run build
+
+    - name: Waiting for Netlify Preview
+      uses: josephduffy/wait-for-netlify-action@v1
+      id: wait-for-netflify-preview
+      with:
+        site_name: hungry-bhaskara-93f2f3
+        max_timeout: 360 # 6 Minutes, depends on your build pipeline duration
+
+    - name: Run E2E Tests on Netlify URL
+      run: npm run e2e
+      env:
+        # This might depend on your test-runner/language binding
+        PLAYWRIGHT_TEST_BASE_URL: ${{ steps.wait-for-netflify-preview.outputs.url }}
