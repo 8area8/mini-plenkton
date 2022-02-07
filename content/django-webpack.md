@@ -1,14 +1,19 @@
 ---
 title: Django + Webpack, le front-end niveau supérieur
-description: Apprenez à utiliser webpack à partir d'une base Django.
-card_description_: "Statue tenant les technologies dans chaque main."
+intro: Le front-end ne se limite pas à une utilisation basique de HTML, CSS et Javascript. Il existe une infinité de bibliothèques Javascript qui nous facilite la vie, ouvre le champ des possibles.
+
+img:
+  name: "tim-mossholder-bo3SHP58C3g-unsplash.jpg"
+  alt: "Statue tenant les technologies dans chaque main."
+
+tags: [Python, Django, Javascript]
 
 added: 03/28/2019
 canonical: "https://www.pythonclassmates.org/ameliorez-votre-front-end-avec-webpack.html"
 categories: [programmation]
 
 badge:
-  link: "https://unsplash.com/@samuelzeller?utm_medium=referral&amp;utm_campaign=photographer-credit&amp;utm_content=creditBadge"
+  link: "?utm_medium=referral&amp;utm_campaign=photographer-credit&amp;utm_content=creditBadge"
   name: "Samuel Zeller"
 ---
 
@@ -98,8 +103,8 @@ module.exports = {
   entry: path.resolve(__dirname, "assets/dev/index.js"),
   output: {
     filename: "bundle.js",
-    path: path.resolve(__dirname, "assets/dist")
-  }
+    path: path.resolve(__dirname, "assets/dist"),
+  },
 };
 ```
 
@@ -292,13 +297,13 @@ module.exports = {
   entry: path.resolve(__dirname, "assets/dev/index.js"),
   output: {
     filename: "bundle.js",
-    path: path.resolve(__dirname, "assets/dist")
+    path: path.resolve(__dirname, "assets/dist"),
   },
   plugins: [
     new MiniCssExtractPlugin({
       filename: "[name].css",
-      chunkFilename: "[id].css"
-    })
+      chunkFilename: "[id].css",
+    }),
   ],
   module: {
     rules: [
@@ -307,12 +312,12 @@ module.exports = {
         use: [
           MiniCssExtractPlugin.loader, // 3. Recrée les fichiers css à partir de leurs équivalents en Javascript.
           "css-loader", // 2. Converti les fichiers CSS en équivalents Javascript
-          "sass-loader" // 1. Transpile le SCSS en CSS
+          "sass-loader", // 1. Transpile le SCSS en CSS
         ],
-        exclude: /node_modules/
-      }
-    ]
-  }
+        exclude: /node_modules/,
+      },
+    ],
+  },
 };
 ```
 

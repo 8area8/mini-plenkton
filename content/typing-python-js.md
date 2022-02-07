@@ -1,7 +1,12 @@
 ---
 title: Le typage dans Python et Javascript
-description: Le typage, qu'est-ce que c'est ? Cas pratique avec une comparaison Python/Javascript !
-card_description: "Statue tenant les technologies dans chaque main."
+intro: "Le typage en programmation donne beaucoup d'indices sur la philosophie et l'utilisation d'un langage: présentation !"
+
+img:
+  name: "maxime-gilbert-X-4NYxVZ4R0-unsplash.jpg"
+  alt: "Statue tenant les technologies dans chaque main."
+
+tags: [Python, Javascript]
 
 badge:
   name: "CloudVisual"
