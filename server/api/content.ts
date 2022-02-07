@@ -1,9 +1,8 @@
-import { resolve } from 'path'
 import { readdirSync, readFileSync } from 'fs'
 import { useQuery } from 'h3'
 import type { IncomingMessage, ServerResponse } from 'http'
 import { marked } from 'marked'
-import { read } from 'gray-matter'
+import matter from 'gray-matter'
 
 interface IFileContent {
     meta: object;
@@ -20,10 +19,17 @@ export const getContent = (start: number = 1, max: number = 4): IFileContent[] =
     console.log(process.cwd())
     const directoryPath = process.cwd() + '/content'
     const filenames = readdirSync(directoryPath).slice(start - 1, start - 1 + max);
-    console.log("Filenames are", filenames)
+
+    // /!\ avoid compatibility errors between jest-ts and nuxt 3 nitro
+    let read: any
+    try {
+        read = matter.read
+    } catch (err) {
+        const matter = require('gray-matter')
+        read = matter.read
+    }
 
     const filesContent = filenames.map(filename => read(`${directoryPath}/${filename}`))
-    console.log("Content are", filesContent)
     return filesContent.map(file => {
         return { meta: file.data, content: marked(file.content) }
     })
