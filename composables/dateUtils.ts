@@ -1,4 +1,4 @@
-import format from 'date-fns/format'
+import format from 'date-fns/format/index.js'
 
 /**
  * Get the locale date and return a nice date format.
