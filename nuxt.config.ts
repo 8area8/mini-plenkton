@@ -18,5 +18,8 @@ export default defineNuxtConfig({
   },
   vite: {
     base: '/_nuxt/'
+  },
+  nitro: {
+    preset: 'lambda'
   }
 })
