@@ -3,7 +3,7 @@ title: Django + Webpack, le front-end niveau supérieur
 intro: Le front-end ne se limite pas à une utilisation basique de HTML, CSS et Javascript. Il existe une infinité de bibliothèques Javascript qui nous facilite la vie, ouvre le champ des possibles.
 
 img:
-  name: "tim-mossholder-bo3SHP58C3g-unsplash.jpg"
+  name: "felipe-simo-T-U6wuM0lvg-unsplash.jpg"
   alt: "Statue tenant les technologies dans chaque main."
 
 tags: [Python, Django, Javascript]
